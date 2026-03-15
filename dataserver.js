@@ -16,6 +16,11 @@ const datafetch =  async () =>{
 }
 datafetch()
 
+
+
+
+
 app.listen(2000, ()=>{
     console.log("server run 2000 port number")
 })
+

@@ -10,10 +10,16 @@ connectDB()
 const updatedata = async ()=>{
  await employees.create({
      
-     name : "Amit",
-     id : "1",
-      roll : "63",
+     name : 'Amit',
+     id : '1',
+      roll : '63',
       class: '12'
+ },
+ {
+    name:'sandeep',
+    id:'2',
+    roll:'59',
+    class:'12'
  }
     
 )}

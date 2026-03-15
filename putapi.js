@@ -6,14 +6,15 @@ const app = Express();
 
 connectDB();
 
+app.use(Express.json())
 app.post('/student', async (req, res)=>{
    try{
-     const{ name, email, phone, position} = res.body;
+     const{ name, id, roll} = res.body;
      const newEmployee = new employees({
         name,
-        email,
-        phone,
-        position
+       id,
+       roll,
+      
      });
      const employee = await newEmployee.save();
        res.json(employee)

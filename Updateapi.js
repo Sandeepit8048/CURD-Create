@@ -6,10 +6,11 @@ const app = express();
 
 connectDB();
 
-app.get( '/studentapi' , async (req,res)=>{
+app.get('/studentapi', async (req,res)=>{
   try{
     const studentapi = await employees.find();
     res.json(studentapi)
+      
   }
   catch(error){
       console.error("server error: ", error)
@@ -17,6 +18,6 @@ app.get( '/studentapi' , async (req,res)=>{
   }
 })
 
-app.listen(6000, ()=>{
-    console.log("server run in port number 6000")
+app.listen(5000, ()=>{
+    console.log("server run in port number 5000")
 })

@@ -5,11 +5,11 @@ import employees from './modul/student.js'
 const app = Express();
 
 connectDB();
+app.use(Express.json());
 
-app.use(Express.json())
 app.post('/student', async (req, res)=>{
    try{
-     const{ name, id, roll} = res.body;
+     const{ name, id, roll} = req.body;
      const newEmployee = new employees({
         name,
        id,
@@ -18,9 +18,11 @@ app.post('/student', async (req, res)=>{
      });
      const employee = await newEmployee.save();
        res.json(employee)
-   }
+
+       console.log(employee)
+      }
    catch(error){
-     console.log("Error saving data :" , error);
+     console.log("Error saving data : " , error);
      res.status(500).send("server error")
    }
 });
